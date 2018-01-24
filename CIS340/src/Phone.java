@@ -21,7 +21,7 @@ public class Phone {
 		
 		//stop = !stop;
 		
-		stop = 0;
+		stop = JOptionPane.NO_OPTION;
 		
 		} catch (Exception ex) {
 			stop = JOptionPane.showConfirmDialog(null, "Invalid Input, would you like to enter agian?");

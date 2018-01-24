@@ -22,8 +22,8 @@ public class Phone {
 		//stop = !stop;
 		
 		stop = JOptionPane.NO_OPTION;
-		JOptionPane.showConfirmDialog(null, "Test Repository");
-		JOptionPane.showConfirmDialog(null, "test 2");
+		//JOptionPane.showConfirmDialog(null, "Test Repository");
+		//JOptionPane.showConfirmDialog(null, "test 2");
 		
 		} catch (Exception ex) {
 			stop = JOptionPane.showConfirmDialog(null, "Invalid Input, would you like to enter agian?");

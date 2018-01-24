@@ -15,7 +15,8 @@ public class TestAnalysis {
 		while(true){
 			
 			//Input Test Score
-			String strTestScore = JOptionPane.showInputDialog("Enter Test Score");
+			//String strTestScore = JOptionPane.showInputDialog("Enter Test Score");
+			String strTestScore = JOptionPane.showInputDialog("Enter Test Score \nEnter minus value to end loop");
 			testScore = Double.parseDouble(strTestScore);
 			
 			//If score is less than zero, the loop terminates

@@ -1,0 +1,2 @@
+Customer [custName=sfg, custNumber=134124, custRate=0, bill=Waterbill [gallons=1233, billvalue=15.72532, billRate=Single]]
+Customer [custName=hhsf, custNumber=412424, custRate=0, bill=Waterbill [gallons=442, billvalue=16.38074, billRate=Duplex]]

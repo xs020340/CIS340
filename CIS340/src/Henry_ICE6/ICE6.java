@@ -1,13 +1,17 @@
 package Henry_ICE6;
 
 import javax.swing.JOptionPane;
+import javax.swing.JTextArea;
 import java.io.*;
+import java.lang.reflect.Array;
+import java.util.Arrays;
+import java.util.Scanner;
 
 public class ICE6 {
 	
 	static Customer[] customers;
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws FileNotFoundException {
 		// TODO Auto-generated method stub
 		
 		//declare variables
@@ -28,7 +32,9 @@ public class ICE6 {
 		//initialize array with size
 		customers=new Customer[noOfCustomers];
 		
-		for(int i=0;i<noOfCustomers;i++){
+		readFromFile("inputWaterBill.txt");
+		
+		for(int i=0;i<noOfCustomers-3;i++){//-3 for the records in the file
 			//start for-loop
 		
 			//input customer type
@@ -77,30 +83,59 @@ public class ICE6 {
 		} // end for-loop
 		
 		displayBill();
-		try {
-			writeToFile();
-		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		sortBill();
+		writeToFile();
 		
 
 	} //end main
 
 	public static void addCustomer (int custType, int custNumber, String custName, int gallons) {
-		
-		Waterbill bill = new Waterbill(gallons, custType);
-		customers[Customer.getNumOfCustomers()]= new Customer(custName, custNumber, bill);
-		
+		if (Customer.getNumOfCustomers()<customers.length){
+			if (custType==1)
+				customers[Customer.getNumOfCustomers()]=new Customer(custName, custNumber, new SingleFamily(gallons));
+			else
+				customers[Customer.getNumOfCustomers()]=new Customer(custName, custNumber, new Duplex(gallons));
+		} else {
+			JOptionPane.showMessageDialog(null, "The array is full");
+		}
 	} //end addCustomer
 	
 	public static void displayBill() {
-		String output="";
+		
+		String output="Name\tNumber\tGallons\tBill\tBilldate\n";
 		for (int i=0; i<customers.length; i++) {
 			output+=customers[i].toString()+"\n";
 		}
-		JOptionPane.showMessageDialog(null, output, "WATERBILL", JOptionPane.INFORMATION_MESSAGE);
+		JOptionPane.showMessageDialog(null, new JTextArea(output), "WATERBILL", JOptionPane.INFORMATION_MESSAGE);
 	} //end displayBill()
+	
+	public static void readFromFile(String filename) throws FileNotFoundException{
+		//create a new file instance
+		File inputFile=new File(filename);
+		
+		//create a scanner
+		Scanner in = new Scanner(inputFile);
+		
+		//read data from file
+		while (in.hasNext()){
+			String line=in.nextLine();
+			String[] customer=line.split(",");
+			addCustomer(Integer.parseInt(customer[0].trim()), 
+					Integer.parseInt(customer[1].trim()), 
+					customer[2].trim(), 
+					Integer.parseInt(customer[3].trim())
+					);
+			
+		}
+		
+		//close the scanner file
+		in.close();
+		
+	}
+	
+	public static void sortBill(){
+		Arrays.sort(customers);
+	}
 	
 	public static void writeToFile() throws FileNotFoundException {
 		String fileOutput="";

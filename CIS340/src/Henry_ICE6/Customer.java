@@ -1,10 +1,10 @@
 package Henry_ICE6;
 
-public class Customer {
+public class Customer implements Comparable<Customer> {
 	
 	private String custName;
 	private int custNumber;
-	private int custRate;
+	//private int custRate;
 	private Waterbill bill;
 	private static int numOfCustomers;
 	
@@ -57,8 +57,18 @@ public class Customer {
 
 	@Override
 	public String toString() {
-		return "Customer [custName=" + custName + ", custNumber=" + custNumber + ", custRate=" + custRate + ", bill="
-				+ bill.toString() + "]";
+		return custName + "\t" + custNumber + "\t" + bill.toString();
+	}
+
+	@Override
+	public int compareTo(Customer cust) {
+		
+		if(this.bill.getValue()>cust.bill.getValue())
+			return 1;
+		else if (this.bill.getValue()<cust.bill.getValue())
+			return -1;
+		else
+			return 0;
 	}
 	
 	

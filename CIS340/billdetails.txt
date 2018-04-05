@@ -1,3 +1,3 @@
-Customer [custName=adsfffsa, custNumber=123424, custRate=0, bill=Waterbill [gallons=3214, billvalue=19.766560000000002, billRate=Single]]
-Customer [custName=wdfasmklml, custNumber=234244, custRate=0, bill=Waterbill [gallons=132, billvalue=15.77004, billRate=Duplex]]
-Customer [custName=dsafasf, custNumber=242424, custRate=0, bill=Waterbill [gallons=320, billvalue=13.8628, billRate=Single]]
+Sudhan	282173	5600.0	$.26.542000	Thu Apr 05 14:59:25 MDT 2018
+Robert	123531	6700.0	$.26.878000	Thu Apr 05 14:59:25 MDT 2018
+Anand	123123	9000.0	$.32.190000	Thu Apr 05 14:59:25 MDT 2018

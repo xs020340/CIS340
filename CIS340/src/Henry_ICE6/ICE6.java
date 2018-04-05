@@ -1,9 +1,9 @@
-package Henry_ICE5;
+package Henry_ICE6;
 
 import javax.swing.JOptionPane;
 import java.io.*;
 
-public class Henry_ICE5 {
+public class ICE6 {
 	
 	static Customer[] customers;
 

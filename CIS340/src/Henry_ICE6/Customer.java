@@ -1,4 +1,4 @@
-package Henry_ICE5;
+package Henry_ICE6;
 
 public class Customer {
 	

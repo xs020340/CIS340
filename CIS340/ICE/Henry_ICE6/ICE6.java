@@ -3,7 +3,6 @@ package Henry_ICE6;
 import javax.swing.JOptionPane;
 import javax.swing.JTextArea;
 import java.io.*;
-import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.Scanner;
 

@@ -29,7 +29,7 @@ public abstract class Waterbill implements BaseCharge{
 
 	@Override
 	public String toString() {
-		return gallons + "\t$" + String.format(".%2f", value) + "\t" + createdDate;
+		return gallons + "\t$" + String.format("%.2f", value) + "\t" + createdDate;
 		
 	}
 	
